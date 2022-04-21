@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="entity.TaiKhoan" table="TaiKhoan">
+        <id name="UserName" type="string">
+            <column name="UserName" length="10" />
+            <generator class="assigned" />
+        </id>
+        <property name="AcPassWord" type="string">
+            <column name="AcPassWord" length="50" />
+        </property>
+        <property name="AccountType" type="string">
+            <column name="AccountType" length="2" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="entity.GiaoVu" table="GiaoVu">
+        <id name="MaGiaoVu" type="string">
+            <column name="MaGiaoVu" length="10" />
+            <generator class="assigned" />
+        </id>
+        <property name="HoVaTen" type="string">
+            <column name="HoVaTen" length="50" />
+        </property>
+        <property name="GioiTinh" type="string">
+            <column name="GioiTinh" length="3" />
+        </property>
+        <!--one-to-one name="taiKhoan" class="entity.TaiKhoan" property-ref="UserName" cascade="save-update,delete" /-->
+    </class>
+</hibernate-mapping>

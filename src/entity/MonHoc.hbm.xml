@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="entity.MonHoc" table="MonHoc">
+        <id name="MaMon" type="string">
+            <column name="MaMon" length="10" />
+            <generator class="assigned" />
+        </id>
+        <property name="TenMon" type="string">
+            <column name="TenMon" length="50" />
+        </property>
+        <property name="NgayBatDauHoc" type="date">
+            <column name="NgayBatDauHoc"/>
+        </property>
+        <property name="NgayKetThucMon" type="date">
+            <column name="NgayKetThucMon"/>
+        </property>
+        <property name="ThuTrongTuan" type="integer">
+            <column name="ThuTrongTuan"/>
+        </property>
+        <property name="GioBatDau" type="time">
+            <column name="GioBatDau"/>
+        </property>
+        <property name="GioKetThuc" type="time">
+            <column name="GioKetThuc"/>
+        </property>
+        <property name="TenPhongHoc" type="string">
+            <column name="TenPhongHoc" length="50" />
+        </property>
+        <set name="dsSinhVien" table="DanhSachSinhVienMonHoc">
+            <key column="MaMon"/>
+            <many-to-many column="MSSV" class="entity.MonHoc"></many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="entity.SinhVien" table="SinhVien">
+        <id name="MSSV" type="string">
+            <column name="MSSV" length="10" />
+            <generator class="assigned" />
+        </id>
+        <property name="HoVaTen" type="string">
+            <column name="HoVaTen" length="50" />
+        </property>
+        <property name="GioiTinh" type="string">
+            <column name="GioiTinh" length="3" />
+        </property>
+        <set name="dsMonHoc" table="DanhSachSinhVienMonHoc">
+            <key column="MSSV"/>
+            <many-to-many column="MaMon" class="entity.MonHoc"></many-to-many>
+        </set>
+        <!--one-to-one name="taiKhoan" class="entity.TaiKhoan" property-ref="UserName" cascade="save-update,delete" /-->
+    </class>
+</hibernate-mapping>

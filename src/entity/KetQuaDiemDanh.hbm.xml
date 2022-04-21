@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="entity.KetQuaDiemDanh" table="KetQuaDiemDanh">
+        <composite-id name="idKetQuaDiemDanh" class="entity.IDKetQuaDiemDanh">
+            <key-property name="MaMon" column="MaMon" length="10" type="string" />
+            <key-property name="MSSV" column="MSSV" length="10" type="string" />
+            <key-property name="TuanDiemDanh" column="TuanDiemDanh" type="integer"/>
+        </composite-id>
+        <property name="DiemDanh" type="boolean">
+            <column name="DiemDanh"/>
+        </property>
+    </class>
+</hibernate-mapping>
