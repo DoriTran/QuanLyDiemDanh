@@ -9,7 +9,7 @@
             <generator class="assigned" />
         </id>
         <property name="AcPassWord" type="string">
-            <column name="AcPassWord" length="50" />
+            <column name="AcPassWord" length="100" />
         </property>
         <property name="AccountType" type="string">
             <column name="AccountType" length="2" />

@@ -3,9 +3,7 @@ package quanlydiemdanh;
 import dao.*;
 import entity.*;
 
-import java.util.List;
-
-public class main {
+public class Main {
 //    public static void main(String[] args) {
 //        List<KetQuaDiemDanh> ds = KetQuaDiemDanhDAO.layDanhSachKetQuaDiemDanh();
 //        for (int i = 0; i < ds.size(); i++) {
@@ -18,8 +16,9 @@ public class main {
 //    }
 
 //    public static void main(String[] args) {
-//        IDKetQuaDiemDanh id = new IDKetQuaDiemDanh("MTH0002", "19120009", 1);
+//        IDKetQuaDiemDanh id = new IDKetQuaDiemDanh("MTH0002", "19120009", 0);
 //        KetQuaDiemDanh kh = KetQuaDiemDanhDAO.layThongTinKetQuaDiemDanh(id);
+//        if (kh == null) return;
 //        System.out.println(kh.getDiemDanh());
 //        System.out.println(kh.getIdKetQuaDiemDanh().getMaMon());
 //        System.out.println(kh.getIdKetQuaDiemDanh().getMSSV());
@@ -45,12 +44,21 @@ public class main {
 //        }
 //    }
 
+//    public static void main(String[] args) {
+//        IDKetQuaDiemDanh id = new IDKetQuaDiemDanh("MTH0002", "19120009", 8);
+//        if (KetQuaDiemDanhDAO.xoaKetQuaDiemDanh(id) == true) {
+//            System.out.println("Xóa thành công!");
+//        } else {
+//            System.out.println("Xóa thất bại!");
+//        }
+//    }
+
     public static void main(String[] args) {
-        IDKetQuaDiemDanh id = new IDKetQuaDiemDanh("MTH0002", "19120009", 8);
-        if (KetQuaDiemDanhDAO.xoaKetQuaDiemDanh(id) == true) {
-            System.out.println("Xóa thành công!");
-        } else {
-            System.out.println("Xóa thất bại!");
-        }
+        new LoginScreen();
     }
+
+//    public static void main(String[] args) {
+//    String pw = new String("GiaoVu03");
+//            System.out.println(Hashing.hash(pw));
+//    }
 }
