@@ -36,4 +36,9 @@ public class TaiKhoan {
     public void setAccountType(String accountType) {
         AccountType = accountType;
     }
+
+    // Check if Account Type is GV
+    public Boolean isGiaoVu() {
+        return this.AccountType.equals(new String("GV"));
+    }
 }

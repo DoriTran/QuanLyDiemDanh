@@ -110,6 +110,8 @@ public class LoginScreen extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
             case "login":
+                this.tf_UserName.setText("GV0003");
+                this.pf_PassWord.setText("GiaoVu03");
                 // Login Info checking
                 TaiKhoan tk = TaiKhoanDAO.layThongTinTaiKhoan(this.tf_UserName.getText());
                 if (tk == null) {
@@ -130,7 +132,7 @@ public class LoginScreen extends JFrame implements ActionListener {
                 // Redirect
                 setVisible(false);
                 dispose();
-                if (tk.getAccountType().equals(new String("SV")) && tk.getUserName().equals(new String(this.pf_PassWord.getPassword()))) {
+                if (!tk.isGiaoVu() && tk.getUserName().equals(new String(this.pf_PassWord.getPassword()))) {
                     System.out.println("Doi mk");
                     new ResetPassScreen(tk);
                 }

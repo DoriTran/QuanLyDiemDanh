@@ -8,6 +8,7 @@ import entity.TaiKhoan;
 
 public class TaiKhoanDAO {
     public static List<TaiKhoan> layDanhSachTaiKhoan() {
+        System.out.println("layDanhSachTaiKhoan");
         List<TaiKhoan> dsTaiKhoan = null;
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         session.beginTransaction();
@@ -18,6 +19,7 @@ public class TaiKhoanDAO {
     }
 
     public static TaiKhoan layThongTinTaiKhoan(String UserName) {
+        System.out.println("layThongTinTaiKhoan");
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
 
@@ -29,6 +31,7 @@ public class TaiKhoanDAO {
     }
 
     public static boolean themTaiKhoan(TaiKhoan tk) {
+        System.out.println("themTaiKhoan");
         if(TaiKhoanDAO.layThongTinTaiKhoan(tk.getUserName()) != null)
             return false;
         Session session = HibernateUtil.getSessionFactory().openSession();
@@ -36,17 +39,18 @@ public class TaiKhoanDAO {
             session.beginTransaction();
             session.save(tk);
             session.getTransaction().commit();
+            session.close();
             return true;
         } catch (Exception e) {
             session.getTransaction().rollback();
             System.out.println(e);
-            return false;
-        } finally {
             session.close();
+            return false;
         }
     }
 
     public static boolean capNhatThongTinTaiKhoan(TaiKhoan tk) {
+        System.out.println("capNhatThongTinTaiKhoan");
         if(TaiKhoanDAO.layThongTinTaiKhoan(tk.getUserName()) == null)
             return false;
         Session session=HibernateUtil.getSessionFactory().getCurrentSession();
@@ -63,6 +67,7 @@ public class TaiKhoanDAO {
     }
 
     public static boolean xoaTaiKhoan(String UserName) {
+        System.out.println("xoaTaiKhoan");
         TaiKhoan kh = TaiKhoanDAO.layThongTinTaiKhoan(UserName);
         if(kh == null)
             return false;

@@ -3,11 +3,8 @@ package quanlydiemdanh;
 import java.awt.*;
 
 public class GridBagStatus extends GridBagConstraints {
-    // Serial ver
-    private static final long serialVersionUID = 1L;
-
     // Constructor
-    GridBagStatus() {
+    public GridBagStatus() {
         this.gridx = 0;
         this.gridy = 0;
     }

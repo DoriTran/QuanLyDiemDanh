@@ -19,6 +19,10 @@ public class MonHoc {
     // Constructor
     public MonHoc() {
     }
+    public MonHoc(String maMon, String tenMon) {
+        this.MaMon = maMon;
+        this.TenMon = tenMon;
+    }
     public MonHoc(String maMon, String tenMon, Date ngayBatDauHoc, Date ngayKetThucMon, Integer thuTrongTuan, Time gioBatDau, Time gioKetThuc, String tenPhongHoc) {
         MaMon = maMon;
         TenMon = tenMon;
@@ -42,7 +46,6 @@ public class MonHoc {
     }
 
     // Getter & Setter
-
     public String getMaMon() {
         return MaMon;
     }

@@ -55,7 +55,7 @@ public class ResetPassScreen extends JFrame implements ActionListener {
     // Init Content
     private void init() {
         // Screen
-        JPanel loginPanel = new JPanel(new GridBagLayout());
+        JPanel resetPassPanel = new JPanel(new GridBagLayout());
         GridBagStatus status = new GridBagStatus();
 
         // Set App Title
@@ -63,62 +63,62 @@ public class ResetPassScreen extends JFrame implements ActionListener {
         this.lb_AppTitle.setHorizontalAlignment(SwingConstants.CENTER);
         this.lb_AppTitle.setHorizontalTextPosition(SwingConstants.CENTER);
         this.lb_AppTitle.setVerifyInputWhenFocusTarget(false);
-        loginPanel.add(lb_AppTitle, status.setGrid(1,1).setWitdh(2).setInsets(30,45,5,45).setFill(GridBagConstraints.BOTH));
+        resetPassPanel.add(lb_AppTitle, status.setGrid(1,1).setWitdh(2).setInsets(30,45,5,45).setFill(GridBagConstraints.BOTH));
 
         // Set Login Title
         this.lb_ResetPassTitle.setFont(new Font("Tahoma", 0, 18));
         this.lb_ResetPassTitle.setHorizontalAlignment(SwingConstants.CENTER);
         this.lb_ResetPassTitle.setHorizontalTextPosition(SwingConstants.CENTER);
         this.lb_ResetPassTitle.setVerifyInputWhenFocusTarget(false);
-        loginPanel.add(lb_ResetPassTitle, status.setGrid(1,2).setWitdh(2).setInsets(5,45,15,45));
+        resetPassPanel.add(lb_ResetPassTitle, status.setGrid(1,2).setWitdh(2).setInsets(5,45,15,45));
 
         // Set UserName Label
         this.lb_UserName.setFont(new Font("Tahoma", 0, 14));
         this.lb_UserName.setHorizontalAlignment(SwingConstants.CENTER);
         this.lb_UserName.setHorizontalTextPosition(SwingConstants.CENTER);
         this.lb_UserName.setVerifyInputWhenFocusTarget(false);
-        loginPanel.add(lb_UserName, status.setGrid(1,3).setWitdh(1).setInsets(5,55,15,5));
+        resetPassPanel.add(lb_UserName, status.setGrid(1,3).setWitdh(1).setInsets(5,55,15,5));
 
         // Set UserName TextField
         this.tf_UserName.setText(taiKhoan.getUserName());
         this.tf_UserName.setFont(new Font("Tahoma", 0, 14));
         this.tf_UserName.setEditable(false);
-        loginPanel.add(tf_UserName, status.setGrid(2,3).setWitdh(2).setInsets(5,5, 15, 55));
+        resetPassPanel.add(tf_UserName, status.setGrid(2,3).setWitdh(2).setInsets(5,5, 15, 55));
 
         // Set PassWord Label
         this.lb_PassWord.setFont(new Font("Tahoma", 0, 14));
         this.lb_PassWord.setHorizontalAlignment(SwingConstants.CENTER);
         this.lb_PassWord.setHorizontalTextPosition(SwingConstants.CENTER);
         this.lb_PassWord.setVerifyInputWhenFocusTarget(false);
-        loginPanel.add(lb_PassWord, status.setGrid(1,4).setWitdh(1).setInsets(5,55,15,5));
+        resetPassPanel.add(lb_PassWord, status.setGrid(1,4).setWitdh(1).setInsets(5,55,15,5));
 
         // Set PassWord TextField
         this.pf_PassWord.setText("");
         this.pf_PassWord.setFont(new Font("Tahoma", 0, 14));
-        loginPanel.add(pf_PassWord, status.setGrid(2,4).setWitdh(2).setInsets(5,5, 15, 55));
+        resetPassPanel.add(pf_PassWord, status.setGrid(2,4).setWitdh(2).setInsets(5,5, 15, 55));
 
         // Set PassWord Label
         this.lb_PassWordRetype.setFont(new Font("Tahoma", 0, 14));
         this.lb_PassWordRetype.setHorizontalAlignment(SwingConstants.CENTER);
         this.lb_PassWordRetype.setHorizontalTextPosition(SwingConstants.CENTER);
         this.lb_PassWordRetype.setVerifyInputWhenFocusTarget(false);
-        loginPanel.add(lb_PassWordRetype, status.setGrid(1,5).setWitdh(1).setInsets(5,55,10,5));
+        resetPassPanel.add(lb_PassWordRetype, status.setGrid(1,5).setWitdh(1).setInsets(5,55,10,5));
 
         // Set UserName TextField
         this.pf_PassWordRetype.setText("");
         this.pf_PassWordRetype.setFont(new Font("Tahoma", 0, 14));
-        loginPanel.add(pf_PassWordRetype, status.setGrid(2,5).setWitdh(2).setInsets(5,5, 15, 55));
+        resetPassPanel.add(pf_PassWordRetype, status.setGrid(2,5).setWitdh(2).setInsets(5,5, 15, 55));
 
         // Set Login Button
         this.btn_Confirm.setFont(new Font("Tahoma", 0, 16));
         this.btn_Confirm.setActionCommand("confirm");
         this.btn_Confirm.addActionListener(this);
         getRootPane().setDefaultButton(this.btn_Confirm);
-        loginPanel.add(btn_Confirm, status.setGrid(1,6).setWitdh(2).setInsets(25,55, 30, 55).setFill(GridBagConstraints.CENTER));
+        resetPassPanel.add(btn_Confirm, status.setGrid(1,6).setWitdh(2).setInsets(25,55, 30, 55).setFill(GridBagConstraints.CENTER));
 
         // Main
         this.setTitle("Quản lý điểm danh");
-        this.setContentPane(loginPanel);
+        this.setContentPane(resetPassPanel);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.pack();
         this.setLocationRelativeTo(null);

@@ -29,7 +29,7 @@
         <property name="TenPhongHoc" type="string">
             <column name="TenPhongHoc" length="50" />
         </property>
-        <set name="dsSinhVien" table="DanhSachSinhVienMonHoc">
+        <set name="dsSinhVien" table="DanhSachSinhVienMonHoc" lazy="false" fetch="join" cascade="save-update">
             <key column="MaMon"/>
             <many-to-many column="MSSV" class="entity.MonHoc"></many-to-many>
         </set>

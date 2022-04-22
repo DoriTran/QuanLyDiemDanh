@@ -14,9 +14,9 @@
         <property name="GioiTinh" type="string">
             <column name="GioiTinh" length="3" />
         </property>
-        <set name="dsMonHoc" table="DanhSachSinhVienMonHoc">
+        <set name="dsMonHoc" table="DanhSachSinhVienMonHoc" lazy="false" fetch="join" cascade="save-update">
             <key column="MSSV"/>
-            <many-to-many column="MaMon" class="entity.MonHoc"></many-to-many>
+            <many-to-many column="MaMon" class="entity.MonHoc"/>
         </set>
         <!--one-to-one name="taiKhoan" class="entity.TaiKhoan" property-ref="UserName" cascade="save-update,delete" /-->
     </class>
